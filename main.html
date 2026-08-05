@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Section</title>
+  <style>
+    /* Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+    /* Global Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f1f5f8; /* Soft blue-grey background */
+      color: #102a42;
+      line-height: 1.5;
+    }
+
+    /* About Section Container */
+    .about-section {
+      width: 90vw;
+      max-width: 1100px;
+      margin: 4rem auto;
+    }
+
+    /* Header Styling */
+    .about-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .about-header h2 {
+      font-size: 2.2rem;
+      letter-spacing: 2px;
+      color: #102a42;
+      margin-bottom: 0.5rem;
+    }
+
+    .about-header p {
+      color: #617d98;
+      font-size: 1rem;
+    }
+
+    /* 2-Column Layout */
+    .about-center {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media screen and (min-width: 800px) {
+      .about-center {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* Image Styling */
+    .about-img img {
+      width: 100%;
+      height: 100%;
+      min-height: 350px;
+      object-fit: cover;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Tabs Container */
+    .btn-container {
+      display: flex;
+      border-radius: 0.5rem 0.5rem 0 0;
+      overflow: hidden;
+    }
+
+    /* Tab Buttons */
+    .tab-btn {
+      flex: 1;
+      padding: 1rem 0;
+      border: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      letter-spacing: 1px;
+      color: #324d67;
+      transition: all 0.3s ease;
+      background-color: #e2e8f0; /* Default background for inactive tabs */
+    }
+
+    .tab-btn:hover:not(.active) {
+      opacity: 0.8;
+    }
+
+    /* Active Tab */
+    .tab-btn.active {
+      background-color: #ffffff;
+      color: #102a42;
+      border-left: 2px solid #8ba4b4; /* Subtle line matching image */
+      border-top: 2px solid #8ba4b4;
+    }
+
+    /* Tab Content Box */
+    .about-content {
+      background-color: #ffffff;
+      padding: 2rem;
+      border-radius: 0 0 0.5rem 0.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      min-height: 250px;
+    }
+
+    /* Hide inactive contents */
+    .content {
+      display: none;
+    }
+
+    /* Show active content */
+    .content.active {
+      display: block;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    .content h4 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      letter-spacing: 1px;
+    }
+
+    .content p {
+      color: #617d98;
+      line-height: 1.8;
+      font-size: 0.9rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <section class="about-section">
+    <!-- Header -->
+    <div class="about-header">
+      <h2>About</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, aperiam!</p>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="about-center">
+      <!-- Left: Image -->
+      <article class="about-img">
+        <img src="img1.png" alt="Mountain Path" />
+      </article>
+
+      <!-- Right: Tabs and Info -->
+      <article class="about-info">
+        <!-- Tab Buttons -->
+        <div class="btn-container">
+          <button class="tab-btn active" data-id="history">History</button>
+          <button class="tab-btn" data-id="vision">Vision</button>
+          <button class="tab-btn" data-id="goals">Goals</button>
+        </div>
+
+        <!-- Tab Content Body -->
+        <div class="about-content">
+          <!-- History Tab -->
+          <div class="content active" id="history">
+            <h4 id="h1">History</h4>
+            <p id="p1">
+              I'm baby wolf pickled schlitz try-hard normcore marfa man bun
+              mumblecore vice pop-up XOXO lomo kombucha glossier bicycle
+              rights. Umami kinfolk salvia jean shorts offal venmo. Knausgaard tilde
+              try-hard, woke fixie banjo man bun. Small batch tumeric mustache
+              tbh wayfarers 8-bit shaman chartreuse tacos. Viral direct trade
+              hoodie ugh chambray, craft beer pork belly flannel tacos single-origin
+              coffee art party migas plaid pop-up.
+            </p>
+          </div>
+
+          <!-- Vision Tab -->
+          <div class="content" id="vision">
+            <h4 id="h2">Vision</h4>
+            <p id="p2">
+              Man bun deep v yr exercitation. Cosby sweater dreamcatcher dolore
+              consequat neutra, occaecat est quis kogi tbh knausgaard. Vaporware
+              readymade mustache pug.
+            </p>
+          </div>
+
+          <!-- Goals Tab -->
+          <div class="content" id="goals">
+            <h4 id="h3">Goals</h4>
+            <p id="p3">
+              Chambray glossier occaecat, whatever quis readymade mustache pug.
+              Mumblecore shoreditch retro craft beer ugh brunch quis. Knausgaard
+              tilde try-hard, woke fixie banjo man bun.
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <script>
+    const btns = document.querySelectorAll('.btn-container button');
+    const contents = document.querySelectorAll('.content');
+
+    btns.forEach(btn => {
+        // 1. Add 'click' as the event type
+        btn.addEventListener('click', () => {
+            // 2. Get the ID we need to show from the button's data-id attribute
+            const id = btn.dataset.id;
+
+            if (id) {
+                // 3. Remove 'active' class from ALL buttons
+                btns.forEach(b => b.classList.remove('active'));
+                
+                // 4. Add 'active' class ONLY to the clicked button
+                btn.classList.add('active');
+
+                // 5. Remove 'active' class from ALL content blocks
+                contents.forEach(content => content.classList.remove('active'));
+
+                // 6. Add 'active' class ONLY to the matching content block
+                const element = document.getElementById(id);
+                element.classList.add('active');
+            }
+        });
+    });
+  </script>
+</body>
+</html>
